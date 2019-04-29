@@ -1,0 +1,49 @@
+{{>header}}
+{{#if existeCurso}}
+<div>
+	<h4 class="text-center">Formulario para insribirse en un curso</h4>
+	<h6 class="text-center">Ingrese sus datos en el siguiente formulario</h6>
+	<form action="/inscribir" method="post">
+		<div class="form-group row">
+			<div class="col-md-6">
+				<label for="documento">Documento de Identidad</label>
+				<input type="number" class="form-control" value="{{documento}}" disabled>
+				<input type="hidden" name="documento" value="{{documento}}" required>
+			</div>
+
+			<div class="col-md-6">
+				<label for="correo">Correo Eletronico</label>
+				<input type="email" class="form-control" value="{{correo}}" disabled>
+				<input type="hidden" name="correo" value="{{correo}}">
+			</div>
+		</div>
+
+		<div class="form-group row">
+			<div class="col-md-6">
+				<label for="nombre">Nombre</label>
+				<input type="text" class="form-control" value="{{nombre}}" disabled>
+				<input type="hidden" name="nombre" value="{{nombre}}">
+			</div>
+
+				<div class="col-md-6">
+					<label for="telefono">Telefono</label>
+					<input type="phone" class="form-control" value="{{telefono}}" disabled>
+					<input type="hidden" name="telefono" value="{{telefono}}">
+				</div>
+			</div>
+
+			<div class="form-group row">
+				<div class="col-md-6">
+					<label for="cursos">Cursos Disponibles</label>
+					{{{selectCursos cursos}}}
+				</div>
+			</div>
+
+			<button class="btn btn-primary">Enviar</button>
+	</form>
+</div>
+{{else}}
+<div class='alert alert-warning' role='alert'>No hay cursos disponibles</div>
+{{/if}}
+
+{{>footer}}

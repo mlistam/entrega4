@@ -1,0 +1,58 @@
+{{>header}}
+    {{#if session}}
+	<h1>Bienvenido {{nombre}}</h1>
+
+    {{else}}
+
+	<h1>Bienvenido a mi sitio</h1>
+		<br>
+	<p>Ingrese sus datos para registrarse en el sistema</p>
+	<form action="/" method="post" enctype="multipart/form-data">
+    <div class="form-group">
+			<div class="form-group row">
+				<div class="col-md-6">
+					<label for="usuario">Nombre de Usuario</label>
+					<input type="text" class="form-control" placeholder="" name="usuario" required>
+				</div>
+
+				<div class="col-md-6">
+					<label for="password">Contraseña</label>
+					<input type="password" class="form-control" placeholder="" name="password" required>
+				</div>
+			</div>
+
+			<div class="form-group row">
+				<div class="col-md-6">
+					<label for="documento">Documento de Identidad</label>
+					<input type="number" class="form-control" placeholder="" name="documento" required>
+				</div>
+
+				<div class="col-md-6">
+					<label for="correo">Correo Eletronico</label>
+					<input type="email" class="form-control" placeholder="" name="correo" required>
+				</div>
+			</div>
+
+			<div class="form-group row">
+				<div class="col-md-6">
+					<label for="nombre">Nombre</label>
+					<input type="text" class="form-control" placeholder="" name="nombre" required>
+				</div>
+
+					<div class="col-md-6">
+						<label for="telefono">Telefono</label>
+						<input type="phone" class="form-control" placeholder="" name="telefono" required>
+					</div>
+			</div>
+			<div class="form-group row">
+				<div class="col-md-6">
+					<label for="archivo">Foto de perfil</label>
+					<input type="file" accept="image/*" class="form-control" name="archivo" required>
+				</div>
+			</div>
+		</div>	
+		<button class="btn btn-success" >Registrar</button>
+	</form>
+    {{/if}}
+	
+{{>footer}}
