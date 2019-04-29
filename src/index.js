@@ -63,7 +63,6 @@ app.use(session({
    
  
   app.get('/', (req,res) => {
-    console.log(process.env.SENDGRID_API_KEY);
     let coordinador = new Estudiante({
         usuario: 'coordinador',
         nombre: 'Coordinador',
